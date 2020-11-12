@@ -100,14 +100,14 @@ public class GameScreen extends ApplicationAdapter implements InputProcessor {
 
         scenery = new Scenery(vocabulary);
         //ajoute a la scene les boutons pause et score
+        /*
         try {
-            /*
             scenery.add(pauseButton);
             scenery.add(scoreButton);
-            */
         } catch (Exception e) {
             Gdx.app.log("GameScreen", "Score: " + e.getMessage());// si hors de l ecran
         }
+        */
         bird = scenery.bird;
         wasp = scenery.wasp;
         //la bull n est pas implémenté dans la scene
