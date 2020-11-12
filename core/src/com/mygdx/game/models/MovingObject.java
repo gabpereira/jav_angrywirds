@@ -8,10 +8,11 @@ public abstract class MovingObject extends PhysicalObject {
 
     public final static float GRAVITY = -9.81f; // Gravity, for objects that fall
     protected boolean frozen = false; // Allows to temporarily freeze the movement
-
+    protected Vector2 startPosition;
     public MovingObject(String picname, Vector2 position, int width, int height, Vector2 speed) {
         super(picname, position, width, height);
         this.speed = speed;
+        startPosition = position;
     }
 
 
@@ -22,8 +23,8 @@ public abstract class MovingObject extends PhysicalObject {
     // the accelerate method implements the speed change, which depends on the physics of the derived object, reason why it is abstract here
     public abstract void accelerate(float dt);
 
-    public void freeze() {
-        frozen = !frozen;
+    public void setFrozen(boolean value) {
+        frozen = value;
     }
 
     public boolean isFrozen() {

@@ -14,6 +14,7 @@ public class Bird extends MovingObject {
     public Bird(){
         super(PICNAME, new Vector2(100, 200) , WIDTH, HEIGHT, new Vector2(50, 100));
         frozen = true;
+
     }
     public Bird(Vector2 position){
         super(PICNAME, position, WIDTH, HEIGHT, new Vector2(0,0));
@@ -24,6 +25,17 @@ public class Bird extends MovingObject {
         super.speed = new Vector2(speed.x, speed.y);
     }
 
+    public void fly(){
+        isFlying = true;
+        isDragged = false;
+        frozen = false;
+    }
+
+    public void reset(){
+        frozen=true;
+        setPosition(startPosition.x, startPosition.y);
+        isFlying = false;
+    }
     @Override
     public void accelerate(float deltaTime) {
         speed.y += MovingObject.GRAVITY * 60 * deltaTime;

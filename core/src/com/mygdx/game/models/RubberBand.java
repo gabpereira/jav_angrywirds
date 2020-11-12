@@ -12,7 +12,7 @@ public class RubberBand extends Sprite {
     private Vector2 origin;
     private Vector2 destination;
     private static int THICKNESS = 40;
-    public static final float power = 3f;
+    public static final float power = 3f; //puissance de tir a l'oiseau
 
     public RubberBand(float x, float y){
         super(new Texture(PICNAME));
